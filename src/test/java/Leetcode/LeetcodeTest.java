@@ -67,4 +67,9 @@ class LeetcodeTest {
         assertEquals(-1,Leetcode.search(new int[]{1},0));
         assertEquals(0,Leetcode.search(new int[]{3,1},3));
     }
+
+    @Test
+    void threeSum() {
+        var a = Leetcode.threeSum(new int[]{-1,0,1,2,-1,-4});
+    }
 }
