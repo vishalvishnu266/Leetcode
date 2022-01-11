@@ -72,4 +72,10 @@ class LeetcodeTest {
     void threeSum() {
         var a = Leetcode.threeSum(new int[]{-1,0,1,2,-1,-4});
     }
+
+    @Test
+    void maxArea() {
+        assertEquals(49,Leetcode.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+        assertEquals(1,Leetcode.maxArea(new int[]{1,1}));
+    }
 }

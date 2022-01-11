@@ -1,5 +1,7 @@
 package Leetcode;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -145,22 +147,22 @@ public class Leetcode {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> results = new ArrayList<>();
 
-        if (nums == null && nums.length < 3){
+        if (nums == null && nums.length < 3) {
             return results;
         }
 
         Arrays.sort(nums);
 
-        for (int i = 0; i < nums.length - 2; i ++){
-            if(nums[i]>0)break;
-            if(i>0 && nums[i]==nums[i-1])continue;
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] > 0) break;
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
 
             int left = i + 1;
             int right = nums.length - 1;
 
-            while (left < right){
+            while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
-                if (sum == 0){
+                if (sum == 0) {
                     List<Integer> list = new ArrayList<>();
                     list.add(nums[i]);
                     list.add(nums[left]);
@@ -168,29 +170,43 @@ public class Leetcode {
 
                     results.add(new ArrayList<>(list));
 
-                    left ++;
-                    right --;
+                    left++;
+                    right--;
 
 
-                    while (left < right && nums[left] == nums[left - 1]){
-                        left ++;
+                    while (left < right && nums[left] == nums[left - 1]) {
+                        left++;
                     }
 
-                    while (right > left && nums[right]  == nums[right + 1]){
-                        right --;
+                    while (right > left && nums[right] == nums[right + 1]) {
+                        right--;
                     }
-                }else if(sum < 0){
-                    left ++;
-                }else{
-                    right --;
+                } else if (sum < 0) {
+                    left++;
+                } else {
+                    right--;
                 }
             }
         }
         results.forEach(System.out::println);
         return results;
     }
-//    11. Container With Most Water
-//    https://leetcode.com/problems/container-with-most-water/
 
+    //    11. Container With Most Water
+//    https://leetcode.com/problems/container-with-most-water/
+    public static int maxArea(int[] height) {
+        int res = 0, i = 0, j = height.length - 1, temp = 0;
+        while (i < j) {
+            if (height[i] <= height[j]) {
+                temp = height[i] * (j - i);
+                i++;
+            } else {
+                temp = height[j] * (j - i);
+                j--;
+            }
+            if (temp > res) res = temp;
+        }
+        return res;
+    }
 }
 
