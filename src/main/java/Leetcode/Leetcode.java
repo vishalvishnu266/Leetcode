@@ -208,5 +208,25 @@ public class Leetcode {
         }
         return res;
     }
+
+    //    371. Sum of Two Integers
+//    https://leetcode.com/problems/sum-of-two-integers/
+    public static int getSum(int a, int b) {
+        var xor = a ^ b;
+        var carry = a & b;
+        if (carry == 0) return xor;
+        else return getSum(xor, carry << 1);
+    }
+
+    //    191. Number of 1 Bits
+//    https://leetcode.com/problems/number-of-1-bits/
+    public static int hammingWeight(int n) {
+        int res = 0;
+        for(int i=0; i<32; i++){
+            if((n & 1) == 1) res++;
+            n = n>>1;
+        }
+        return res;
+    }
 }
 
