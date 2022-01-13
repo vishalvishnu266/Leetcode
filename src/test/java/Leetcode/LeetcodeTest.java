@@ -81,14 +81,33 @@ class LeetcodeTest {
 
     @Test
     void getSum() {
-//        assertEquals(5,Leetcode.getSum(2,3));
+        assertEquals(5,Leetcode.getSum(2,3));
         assertEquals(-1, Leetcode.getSum(-5, 4));
-//        assertEquals(-9,Leetcode.getSum(-5,-4));
+        assertEquals(-9,Leetcode.getSum(-5,-4));
     }
 
     @Test
     void hammingWeight() {
         assertEquals(3, Leetcode.hammingWeight(00000000000000000000000000001011));
         assertEquals(1, Leetcode.hammingWeight(00000000000000000000000010000000));
+    }
+
+    @Test
+    void countBits() {
+
+        int[] expected1 = {0, 1, 1};
+        int[] result1 = Leetcode.countBits(2);
+        assertTrue(Arrays.equals(expected1, result1));
+
+        int[] expected2 = {0, 1, 1, 2, 1, 2};
+        int[] result2 = Leetcode.countBits(5);
+        assertTrue(Arrays.equals(expected2, result2));
+    }
+
+    @Test
+    void missingNumber() {
+        assertEquals(8,Leetcode.missingNumber(new int[]{9,6,4,2,3,5,7,0,1}));
+        assertEquals(2,Leetcode.missingNumber(new int[]{3,0,1}));
+        assertEquals(2,Leetcode.missingNumber(new int[]{0,1}));
     }
 }

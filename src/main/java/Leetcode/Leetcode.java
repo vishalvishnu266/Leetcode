@@ -222,11 +222,64 @@ public class Leetcode {
 //    https://leetcode.com/problems/number-of-1-bits/
     public static int hammingWeight(int n) {
         int res = 0;
-        for(int i=0; i<32; i++){
-            if((n & 1) == 1) res++;
-            n = n>>1;
+        for (int i = 0; i < 32; i++) {
+            if ((n & 1) == 1) res++;
+            n = n >> 1;
         }
         return res;
+    }
+
+    //    338. Counting Bits
+//    https://leetcode.com/problems/counting-bits/
+//    public static int[] countBits(int n) {
+//        int[] dp = new int[n + 1];
+//
+//        for (int i = 1; i < dp.length; i++) {
+//            var temp = i & (i - 1);
+//            dp[i] = dp[i & (i - 1)] + 1;
+//        }
+//
+//        return dp;
+//    }        int[] dp = new int[n + 1];
+//
+//        for (int i = 1; i < dp.length; i++) {
+//            var temp = i & (i - 1);
+//            dp[i] = dp[i & (i - 1)] + 1;
+//        }
+//
+//        return dp;
+    //TODO
+
+    public static int[] countBits(int n) {
+        if (n < 0) {
+            return new int[0];
+        }
+
+        int[] result = new int[n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            if ((i & 1) == 0) {
+                result[i] = result[i / 2];
+            } else {
+                result[i] = result[i - 1] + 1;
+            }
+        }
+
+        return result;
+    }
+
+    //    268. Missing Number
+//    https://leetcode.com/problems/missing-number/
+    public static int missingNumber(int[] nums) {
+        var expected =0;
+        var original =0;
+        var pointer = 1;
+        for(int i:nums){
+            original = original+i;
+            expected = expected + pointer;
+            pointer++;
+        }
+        return expected-original;
     }
 }
 
