@@ -271,15 +271,30 @@ public class Leetcode {
     //    268. Missing Number
 //    https://leetcode.com/problems/missing-number/
     public static int missingNumber(int[] nums) {
-        var expected =0;
-        var original =0;
+        var expected = 0;
+        var original = 0;
         var pointer = 1;
-        for(int i:nums){
-            original = original+i;
+        for (int i : nums) {
+            original = original + i;
             expected = expected + pointer;
             pointer++;
         }
-        return expected-original;
+        return expected - original;
+    }
+
+    //    190. Reverse Bits
+//    https://leetcode.com/problems/reverse-bits/
+    public static int reverseBits(int n) {
+
+        int res = 0;
+        for (int i = 0; i < 32; i++) {
+            var temp = n & 1;
+            res = res <<1;
+            if(temp == 1) res = res + 1;
+            n = n>>1;
+
+        }
+        return res;
     }
 }
 

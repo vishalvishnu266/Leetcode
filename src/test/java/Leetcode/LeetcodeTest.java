@@ -110,4 +110,9 @@ class LeetcodeTest {
         assertEquals(2,Leetcode.missingNumber(new int[]{3,0,1}));
         assertEquals(2,Leetcode.missingNumber(new int[]{0,1}));
     }
+
+    @Test
+    void reverseBits() {
+            assertEquals(964176192 ,Leetcode.reverseBits(00000010100101000001111010011100));
+    }
 }
