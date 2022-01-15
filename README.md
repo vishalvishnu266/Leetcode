@@ -10,3 +10,10 @@
 - Search in Rotated Sorted Array - [https://leetcode.com/problems/search-in-rotated-sorted-array/](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 - 3Sum - [https://leetcode.com/problems/3sum/](https://leetcode.com/problems/3sum/)
 - Container With Most Water - [https://leetcode.com/problems/container-with-most-water/](https://leetcode.com/problems/container-with-most-water/)
+## Binary
+
+- Sum of Two Integers - [https://leetcode.com/problems/sum-of-two-integers/](https://leetcode.com/problems/sum-of-two-integers/)
+- Number of 1 Bits - [https://leetcode.com/problems/number-of-1-bits/](https://leetcode.com/problems/number-of-1-bits/)
+- Counting Bits - [https://leetcode.com/problems/counting-bits/](https://leetcode.com/problems/counting-bits/)
+- Missing Number - [https://leetcode.com/problems/missing-number/](https://leetcode.com/problems/missing-number/)
+- Reverse Bits - [https://leetcode.com/problems/reverse-bits/](https://leetcode.com/problems/reverse-bits/)
