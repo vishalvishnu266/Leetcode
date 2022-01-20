@@ -1,6 +1,5 @@
 package Leetcode;
 
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -296,5 +295,22 @@ public class Leetcode {
         }
         return res;
     }
+    //dynamic programming
+//70. Climbing Stairs
+//    https://leetcode.com/problems/climbing-stairs/
+    public static int climbStairs(int n) {
+        if(n == 1) return 1;
+        var result = new int[n+1];
+        result[0] =1;
+        result[1] =1;
+        for (int i = 2; i < n+1; i++) {
+            result[i] = result[i-1]+result[i-2];
+        }
+        return result[n];
+    }
+//    322. Coin Change
+//    https://leetcode.com/problems/coin-change/
+
+
 }
 
